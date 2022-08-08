@@ -47,7 +47,8 @@ jobs:
         uses: docker/build-push-action@v2 
         with:
           push: true
-          tags: zorik28/yamdb_final:latest
+          file: api_yamdb/Dockerfile
+          tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_final:latest
 
   deploy:
     runs-on: ubuntu-latest
