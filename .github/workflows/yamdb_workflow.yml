@@ -65,6 +65,7 @@ jobs:
           # Остановка контейнеров и удаление контейнера web
           sudo docker compose stop
           sudo docker compose rm web
+          sudo docker compose pull web
           # Создание файла с переменными окружения
           touch .env
           echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
