@@ -62,9 +62,11 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
-          # Остановка контейнеров и удаление контейнера web
+          # Остановка контейнеров
           sudo docker compose stop
+          # Удаление контейнера web
           sudo docker compose rm web
+          # Скачивание нового образа yamdb_final
           sudo docker compose pull web
           # Создание файла с переменными окружения
           touch .env
