@@ -13,8 +13,11 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import AccessToken
+from reviews.models import Category, Genre, Review, Title
+from users.models import CustomUser
 
 from api_yamdb.settings import ADMIN_EMAIL
+
 from .filters import TitleFilter
 from .mixins import CreateListDestroyMixin
 from .permissions import (AuthorAdminModeratorOrReadOnly, IsAdminOrReadOnly,
@@ -23,8 +26,6 @@ from .serializers import (CategorySerializer, CommentSerializer,
                           GenreSerializer, RegisterSerializer,
                           ReviewSerializer, TitleCreateSerializer,
                           TitleSerializer, TokenSerializer, UserSerializer)
-from reviews.models import Category, Genre, Review, Title
-from users.models import CustomUser
 
 
 class CategoryViewSet(CreateListDestroyMixin):
@@ -170,4 +171,4 @@ class UserView(viewsets.ModelViewSet):
 
             if getattr(user, '_prefetched_objects_cache', None):
                 user._prefetched_objects_cache = {}
-            return Response(serializer.data)
+        return Response(serializer.data)
