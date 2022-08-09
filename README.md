@@ -1,5 +1,5 @@
 # [yamdb_final](zorik.ddns.net/redoc)
-!(https://github.com/Zorik28/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+![КАРТИНКА](https://github.com/Zorik28/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 
 ### Описание
