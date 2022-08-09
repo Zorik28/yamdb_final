@@ -1,4 +1,4 @@
-# [yamdb_final](zorik.ddns.net/redoc/)
+# [yamdb_final](http://zorik.ddns.net/redoc/)
 ![КАРТИНКА](https://github.com/Zorik28/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 
