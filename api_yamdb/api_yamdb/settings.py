@@ -7,7 +7,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', default='testkey')
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['84.201.153.239', 'localhost', 'zorik.ddns.net']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
