@@ -53,8 +53,7 @@
 ```sudo docker-compose exec web python manage.py loaddata fixtures.json```
 
 
-
-### Примеры запросов
+### Примеры некоторых запросов:
 **1. Пример GET-запроса: получить список всех категорий.**
 _GET .../api/v1/categories/_
 
@@ -109,7 +108,7 @@ _POST .../api/v1/titles/_
 }
 ```
 
-**3. Пример PATCH-запроса с токеном: частичное обновление отзыва по id.**
+**3. Пример PATCH-запроса с токеном: частичное обновление отзыва по id.**  
 _PATCH .../api/v1/titles/{title_id}/reviews/{review_id}/_
 ```
 {
