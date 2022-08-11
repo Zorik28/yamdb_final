@@ -2,13 +2,15 @@
 ![КАРТИНКА](https://github.com/Zorik28/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 
-### Описание
+### Описание:
 Этот проект предназначен для реализации Continuous Integration
 и Continuous Deployment для сервиса api_yamdb с помощью инструментов GitActions.
 После успешного обновления и запуска вам поступают телеграм-уведомления.
+В проекте используется контейнерезация Docker. Для управления взаимодействием 
+нескольких контейнеров применяется утилита docker-compose.
 
 
-### Технологии развёртывания
+### Технологии развёртывания.
 - Python:3.7-slim
 - Docker-compose 3.8
 - Postgres:13.0-alpine
@@ -16,13 +18,13 @@
 - Gunicorn==20.0.4
 
 
-### Стек технологий api_yamdb
+### Стек технологий api_yamdb.
 - написан на Python с использованием Django REST Framework.
 - библиотека Simple JWT - работа с JWT-токеном
 - библиотека django-filter - фильтрация запросов
 
 
-### Шаблон наполнения env-файла
+### Шаблон наполнения env-файла.
 - ```DOCKER_USERNAME=<имя аккаунта на DockerHub>```
 - ```DOCKER_PASSWORD=<пароль от аккаунта на DockerHub>```
 - ```HOST=<адрес сервера>```
@@ -40,14 +42,15 @@
 - ```SECRET_KEY=<секретный ключ Django>```
 
 
-### Описание некоторых команд на сервере
-- Выполните миграции
-```docker compose exec web python manage.py migrate```
-- Создайте суперпользователя
-```docker compose exec web python manage.py createsuperuser```
-- Подгрузите статику
-```docker compose exec web python manage.py collectstatic --no-input```
-
+### Описание некоторых команд на сервере после успешного развёртывания:
+- Выполнить миграции
+```sudo docker compose exec web python manage.py migrate```
+- Создать суперпользователя
+```sudo docker compose exec web python manage.py createsuperuser```
+- Подгрузить статику
+```sudo docker compose exec web python manage.py collectstatic --no-input```
+- Заполнение базы данными
+```sudo docker-compose exec web python manage.py loaddata fixtures.json```
 
 
 
