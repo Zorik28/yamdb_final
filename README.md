@@ -2,62 +2,62 @@
 ![КАРТИНКА](https://github.com/Zorik28/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 
-### Описание:
-Этот проект предназначен для реализации Continuous Integration
-и Continuous Deployment для сервиса api_yamdb с помощью инструментов GitActions.
-После успешного обновления и запуска вам поступают телеграм-уведомления.
-В проекте используется контейнерезация Docker. Для управления взаимодействием 
-нескольких контейнеров применяется утилита docker-compose.
+### Description:
+This project is designed to implement Continuous Integration
+and Continuous Deployment for the api_yamdb service using the GitActions tools.
+After a successful update and launch, you receive telegram notifications.
+The project uses Docker containerization. To manage interaction
+multiple containers, the docker-compose utility is used.
 
 
-### Технологии развёртывания.
-- Python:3.7-slim
-- Docker-compose 3.8
+### Deployment technologies.
+-Python:3.7-slim
+- docker-compose 3.8
 - Postgres:13.0-alpine
 - Nginx:1.21.3-alpine
 - Gunicorn==20.0.4
 
 
-### Стек технологий api_yamdb.
-- написан на Python с использованием Django REST Framework.
-- библиотека Simple JWT - работа с JWT-токеном
-- библиотека django-filter - фильтрация запросов
+### api_yamdb technology stack.
+- written in Python using Django REST Framework.
+- Simple JWT library - work with JWT token
+- django-filter library - request filtering
 
 
-### Шаблон наполнения env-файла.
-- ```DOCKER_USERNAME=<имя аккаунта на DockerHub>```
-- ```DOCKER_PASSWORD=<пароль от аккаунта на DockerHub>```
-- ```HOST=<адрес сервера>```
-- ```USER=<имя пользователя на сервере>```
-- ```SSH_KEY=<приватный ключ для доступа на сервер>```
-- ```PASSPHRASE=<фраза-пароль для ключа>```
-- ```TELEGRAM_TO=<id своего телеграм-аккаунта>```
-- ```TELEGRAM_TOKEN=<токен телеграм-бота>```
+### Env-file template.
+- ```DOCKER_USERNAME=<DockerHub account name>```
+- ```DOCKER_PASSWORD=<DockerHub account password>```
+- ```HOST=<server address>```
+- ```USER=<server username>```
+- ```SSH_KEY=<private key to access the server>```
+- ```PASSPHRASE=<key passphrase>```
+- ```TELEGRAM_TO=<id of your telegram account>```
+- ```TELEGRAM_TOKEN=<telegram bot token>```
 - ```DB_ENGINE=django.db.backends.postgresql```
-- ```DB_NAME=<имя базы данных>```
-- ```POSTGRES_USER=<логин для подключения к базе данных>```
-- ```POSTGRES_PASSWORD=<пароль для подключения к БД>```
-- ```DB_HOST=db # название сервиса (контейнера)```
-- ```DB_PORT=5432 # порт для подключения к БД```
-- ```SECRET_KEY=<секретный ключ Django>```
+- ```DB_NAME=<database name>```
+- ```POSTGRES_USER=<database login>```
+- ```POSTGRES_PASSWORD=<database password>```
+- ```DB_HOST=db # service (container) name```
+- ```DB_PORT=5432 # port to connect to the database```
+- ```SECRET_KEY=<Django secret key>```
 
 
-### Описание некоторых команд на сервере после успешного развёртывания:
-- Выполнить миграции
+### Description of some commands on the server after successful deployment:
+- Run migrations
 ```sudo docker compose exec web python manage.py migrate```
-- Создать суперпользователя
+- Create superuser
 ```sudo docker compose exec web python manage.py createsuperuser```
-- Подгрузить статику
+- Upload statics
 ```sudo docker compose exec web python manage.py collectstatic --no-input```
-- Заполнение базы данными
+- Filling the database
 ```sudo docker-compose exec web python manage.py loaddata fixtures.json```
 
 
-### Примеры некоторых запросов:
-**1. Пример GET-запроса: получить список всех категорий.**
+### Request examples
+**GET-request example: Get the list of all categories.**
 _GET .../api/v1/categories/_
 
-**Пример ответа:**
+**Response example:**
 ```
 [
   {
@@ -74,7 +74,7 @@ _GET .../api/v1/categories/_
 ]
 ```
 
-**2. Пример POST-запроса с токеном: добавление произведения.**
+**POST-request example with a token: adding the work.**
 _POST .../api/v1/titles/_
 ```
 {
@@ -87,7 +87,7 @@ _POST .../api/v1/titles/_
     "category": "string"
 }
 ```
-**Пример ответа:**
+**Response example:**
 ```
 {
     "id": 0,
@@ -108,7 +108,7 @@ _POST .../api/v1/titles/_
 }
 ```
 
-**3. Пример PATCH-запроса с токеном: частичное обновление отзыва по id.**  
+**PATCH-request example with a token: partial update of the review by id.**  
 _PATCH .../api/v1/titles/{title_id}/reviews/{review_id}/_
 ```
 {
@@ -116,7 +116,7 @@ _PATCH .../api/v1/titles/{title_id}/reviews/{review_id}/_
     "score": 1
 }
 ```
-**Пример ответа:**
+**Response example:**
 ```
 {
     "id": 0,
@@ -128,6 +128,6 @@ _PATCH .../api/v1/titles/{title_id}/reviews/{review_id}/_
 ```
 
 
-#### Автор
-Карапетян Зорик  
-РФ, Санкт-Петербург, Купчино.
+#### Author
+Karapetyan Zorik  
+Russian Federation, St. Petersburg, Kupchino.
