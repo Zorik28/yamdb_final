@@ -11,7 +11,7 @@ multiple containers, the docker-compose utility is used.
 
 
 ### Deployment technologies.
--Python:3.7-slim
+- Python:3.7-slim
 - docker-compose 3.8
 - Postgres:13.0-alpine
 - Nginx:1.21.3-alpine
